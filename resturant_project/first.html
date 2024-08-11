@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <style>
+    *{
+        margin: 0;padding: 0; 
+        color: #EBF4F6;
+    }
+    
+    .heading{
+        padding: 20px 0;
+        text-align: center;color: black;
+        text-transform: capitalize;
+    }
+    a{
+        color: rgb(122, 115, 115);
+    }
+    a:hover{
+        text-decoration: none;
+    } 
+    nav{
+
+        z-index: 2000;
+    }
+    
+    .navbar .info button{text-align: center;
+        width: 40px;height: 40px;
+        font-size: 15px; 
+        background: black;
+         border-radius: 50%;margin-left: 2px;
+    }
+   
+    .navbar .info button a{
+         color: white;
+    }
+    .navbar .info .increase{
+        background: rgb(89, 211, 89);
+        width: 18px;height: 18px;
+        border-radius: 50%;
+        position:relative; 
+        top: -12px; 
+        border: none; 
+        text-align: center;
+        display: none;
+    }
+     
+    .content_of_info_to_nav .content_of_increase{
+          height:100vh;
+        width: 25vw;background: white; position:fixed;
+        right:0;margin-top: 4rem; z-index: 1000;overflow-y: auto;
+        
+    }
+    
+    .content_of_info_to_nav #increase_btn img{
+        width: 80px;height: 80px;border-radius: 50%;
+        position: relative;top: 10px;
+
+    }
+   
+    .content_of_info_to_nav #increase_btn h2{
+        font-size: 18px; 
+    }
+    .content_of_info_to_nav #increase_btn p{
+        font-size: 12px; 
+        width: 90%;
+    }.content_of_info_to_nav #increase_btn .box{
+        padding: 12px 5px;
+    }
+    .content_of_info_to_nav #increase_btn  .info_cart{
+        padding: 0 5px;color: black;
+    }
+    .content_of_info_to_nav #increase_btn .box .price_product{
+        position: relative;bottom: 10px;
+    }
+    .content_of_info_to_nav #increase_btn .box .btn_delete{
+        display: inline;
+        font-size: 15px;
+    }
+    .content_of_info_to_nav #increase_btn .box .btn_delete:hover{
+     font-size: 16px;cursor: pointer;font-weight: bold;
+    }
+    .content_of_info_to_nav .content_of_increase .total_monay{
+        position: fixed;
+        top:90%;text-align: center;
+        z-index: 3;
+        height: 50px;
+        width:25vw;
+        font-size: 18px;
+        font-weight: bold;
+        display: none;
+      
+    }
+
+    .Home{
+        height: 100%;
+        background:linear-gradient(to right,#07195271,#ebf4f618), url(pexels-ella-olsson-572949-1640777.jpg);
+         
+        background-repeat: no-repeat;
+         background-size: cover;
+    }
+    .Home .icons{
+        color: white;
+        border: 2px solid black;
+        background: black;
+        height:150px;
+        width:200px; 
+        border-radius: 47%;
+        background:rgba(0, 0, 0, 0.897);
+        position: fixed;
+        bottom: 40%;
+       left: 98%;
+      
+        
+    }
+    .Home .icons:hover{
+        transform: scale(1.1);
+    }
+    .Home .content_of_btn .circle_menu .circle_icon{
+        text-align: center;  
+     
+        
+    }
+    .Home .content_of_btn .circle_menu .circle_icon a{
+        display: inline-block;
+        padding:12px 0;
+        color: white; 
+        height: 40px;width:40px;
+        font-size: 15px;
+        background: rgb(172, 175, 172);
+        border-radius: 50%; 
+    }
+    .Home .content_of_btn .circle_menu{
+        color: black;
+   
+        position:fixed;
+        bottom: 36%;
+        left: 100%;
+      
+    }
+    .Home .content_of_home{
+         padding: 30vh 0; 
+         padding-left: 7vw;width: 40vw;
+    }
+    .Home .content_of_home h1{
+        color: rgba(255, 255, 255, 0.671);
+        margin-bottom: 20px;
+    }
+    .Home .content_of_home p{
+        line-height: 1.5;
+        letter-spacing: 1px;
+        font-size:18px;
+        color: whitesmoke;
+    }
+    .Home .content_of_home button{
+        width: 110px;
+        border: none;
+        height: 40px;
+        color: white;
+        background: rgba(215, 231, 231, 0.726);
+        margin-top: 15px;
+        border-radius: 20px;
+        transition: .2s;
+    }
+    .Home .content_of_home button:hover{
+        transform: scale(1.1);
+        
+    }
+    
+    .content_calculate{
+        position:fixed;z-index: 100;
+        margin:calc(50vh - 150px) calc(50vw - 100px);
+        background: rgb(37, 37, 37);
+       
+    }
+    .content_calculate .numbers{
+        width: 200px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .content_calculate #display{
+        color:black;
+        text-align: right;
+    }
+    .Products .content_of_products{
+         
+        padding-left:10vw;
+        padding-right: 10vw;
+        padding-top: 160px;
+        background: #088295de;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+        gap: 23px;
+        
+    }
+    .Products .content_of_products .box{
+  
+        text-align: center;
+        background: #37B7C3;
+        border-radius: 50px; margin-bottom: 100px;
+
+    }
+    .Products .content_of_products .box .btn_delete{
+        display: none;
+    }
+    .Products .content_of_products img{
+        width: 150px;
+        height: 150px;
+        border-radius:50% ;  
+    
+      position:relative;
+      bottom: 75px;
+
+    }
+
+    .Products .content_of_products .info_cart{
+        position:relative;padding: 0 5%;
+        bottom: 55px;
+    }
+    .Products .content_of_products .info_cart .stars{
+        display: flex;
+
+    }
+    .Products .content_of_products .box .price_product{
+        color: rgb(26, 25, 25);
+
+    }
+    .Products .content_of_products .box .btn_plus{
+
+        height: 50px;
+        width: 50px;
+        font-size: 30px;
+         border-radius:50% ;
+         text-align: center;
+         position: relative;
+         bottom: 40px;
+         left:100px;
+         border: none;
+         background: rgb(170, 175, 175);
+
+    }
+    .about .details{
+        margin: 0 7vw;
+        background: #088295de;
+        display: flex;
+    }
+    .about .details .content_of_about{
+        padding: 20vh 4vw;
+    }
+    .about .details .content_of_about h2{
+        
+        font-weight: bold;
+    }
+    .about .details .content_of_about p{
+        font-size: 18px;letter-spacing: 1px;
+        width: 95%;
+        line-height: 1.2;
+        padding: 10px 20px;
+    }
+    .about .details .content_of_about button{
+        width: 100px;
+        height: 35px;
+        border-radius: 20px;
+        border: none;
+        background: #37B7C3;color: #EBF4F6;
+    }
+    .about .details .content_of_about button:hover{
+        transform: scale(1.1);letter-spacing: 1px;
+    }
+    .Review .details{
+        padding:5vh 10vw;
+        background: #088295de;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+        gap:20px;
+    }
+    .Review .details img{
+        width: 70px;height: 70px;
+        border-radius: 50%;
+    }
+    .Review .details img:hover{
+        height: 72px;width: 72px;
+    }
+    .Review .details .box{
+        display: flex;
+    }
+    .Review .details .box .info{
+        padding: 0 10px;
+    }
+    .Review .details .box .image p{
+        width: 80px;
+    }
+     
+    .Review .details .box .stars i{
+        color: yellow;font-size: 10px; 
+    } 
+    .Contacts .details{
+        background:#025d6b; 
+        height: 25vh;text-align: center;
+    }      
+    .Contacts .share a{
+        height: 20px;width: 20px;
+        color: white;
+        font-size: 25px;
+        border-radius: 50%;
+        padding: 5px 0;
+        margin: 0 5px;
+    }
+    .Contacts .share a:hover{
+        font-size: 28px;
+        color: rgb(214, 208, 208);
+    }
+    .Contacts .details p{
+       
+        padding: 10px 0;font-size: 20px;
+    }
+    @media(max-width:600px){
+
+        .Home .content_of_home{
+        width: 100vw; padding-top: 25vh;
+            
+       }
+
+    }
+    @media(max-width:550px){
+        .content_of_info_to_nav .content_of_increase{
+            width: 60vw;
+           }
+           
+    }
+    @media(max-width:850px){
+        .content_of_info_to_nav .content_of_increase{
+            width: 45vw;
+           }
+           
+    }
+
+    @media(max-width:990px){
+        
+       
+       .Home .content_of_home{
+
+          width: 65vw;
+            
+       } .about .details {
+        display: inline-block;
+        margin:0 5vw;
+       }
+
+       
+       .about .details .image img{
+        width: 100%;
+      
+        
+       }
+       .about .details .content_of_about{
+        padding: 10vh 4vw;
+        width: 100%; 
+        background:  #37B7C3 ;
+       }
+   
+    }
+
+   
+  
+   </style>
+</head>
+<body>
+
+      <nav class="navbar navbar-expand-lg navbar-light" style=" background: rgba(237, 250, 255, 0.884); position: fixed;width: 100vw;">
+        <a href="#" class="col-3" style="margin: 0 6%;"><img style=" width: 70px; height: 50px;" src="logo.jpg" alt=""></a>
+        
+
+       <div class="collapse navbar-collapse" id="f">
+        <div class="col-7">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="#Home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Review">Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Contacts">Contacts</a></li>
+     
+            </ul>
+          
+           </div>
+           <div class="info col-xl text-center">
+            <button onclick="size_of_list()" class="btn  cart" id="cart" data-target="#increase_btn" data-toggle="collapse" ><a data-target="#increase_btn" data-toggle="collapse"  href="#" class="fas fa-shopping-cart"></a><input class="increase" id="increase" type="text" disabled></button>
+            <button><a href="#" class="fas fa-sign-in"></a></button>
+            <button><a href="#" class="fas fa-sign-out"></a></button>  
+           </div>
+       </div>
+      
+       <a href="#f" class="navbar-toggler " style="margin: 0 3vw;" data-toggle="collapse"><span class="navbar-toggler-icon"></span></a>
+      </nav>  
+      <div class="content_of_info_to_nav">
+        <div class="content_of_increase collapse navbar-collapse" id="increase_btn" style="font-size: 12px;">
+             <button class="total_monay btn btn-dark" id="total_monay">
+                I finished shopping
+             </button>
+             
+        </div>
+       </div>
+       <div class="share">
+
+    
+      
+      <div class="Home" id="Home">
+        <button class="icons  navbar-toggler" data-toggle="collapse" data-target="#images"></button>
+
+        <div class="content_of_btn" >
+            <div class="circle_menu collapse navbar-collapse share" id="images">
+                <div class="circle_icon navbar-toggler" data-target="#content" data-toggle="collapse" style="transform: translate(-85px,0);"><a  data-target="#content" data-toggle="collapse" href="#" class="fas fa-calculator"></a></div>
+                <div class="circle_icon" style="transform: translate(-110px,0);"><a href="#" class="fab fa-twitter"></a></div>
+                <div class="circle_icon" style="transform: translate(-120px,0);"><a href="#" class="fab fa-instagram"></a></div>
+                <div class="circle_icon" style="transform: translate(-110px,0);"><a href="#" class="fab fa-linkedin"></a></div>
+                <div class="circle_icon" style="transform: translate(-85px,0);"><a href="#" class="fab fa-pinterest"></a></div>
+            </div>
+            <div class="content_calculate collapse navbar-collapse" id="content">
+                <input id="display" disabled type="text" style="height: 40px; width: 200px; background: rgb(219, 218, 218);margin-bottom: 0;">
+                <div class="numbers">
+                 
+                    <button onclick=" display_clear()" class="btn btn-outline-secondary">c</button>
+                    <button onclick="print('%')" class="btn btn-outline-secondary">%</button>
+                    <button onclick="clear_last_digit()" class="btn btn-outline-secondary">Back</button>
+                    <button onclick="print('/')" class="btn btn-outline-secondary">/</button>
+                    <button onclick="print('7')" class="btn btn-outline-secondary">7</button>
+                    <button onclick="print('8')" class="btn btn-outline-secondary">8</button>
+                    <button onclick="print('9')" class="btn btn-outline-secondary">9</button>
+                    <button onclick="print('*')" class="btn btn-outline-secondary">*</button>
+                    <button onclick="print('4')" class="btn btn-outline-secondary">4</button>
+                    <button onclick="print('5')" class="btn btn-outline-secondary">5</button>
+                    <button onclick="print('6')" class="btn btn-outline-secondary">6</button>
+                    <button onclick="print('-')" class="btn btn-outline-secondary">-</button>
+                    <button onclick="print('1')" class="btn btn-outline-secondary">1</button>
+                    <button onclick="print('2')" class="btn btn-outline-secondary">2</button>
+                    <button onclick="print('3')" class="btn btn-outline-secondary">3</button>
+                    <button onclick="print('+')" class="btn btn-outline-secondary">+</button>
+                    <button onclick="print('00')" class="btn btn-outline-secondary">00</button>
+                    <button onclick="print('0')" class="btn btn-outline-secondary">0</button>
+                    <button onclick="print('.')" class="btn btn-outline-secondary">.</button>
+                    <button onclick="calculate()" class="btn btn-outline-secondary">=</button>
+                </div>
+          </div>
+          <div class="content_of_home col ">
+            <h1>The Five Star Resturant</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Architecto suscipit, eaque veniam voluptatibus, debitis,
+                expedita libero vitae asperiores consequatur quia temporibus nobis iste?
+                Illo magni provident, saepe obcaecati doloribus fugit.
+            </p>
+            <button class="btn"><a href="#">learn more ></a></button>
+          </div>
+        </div>
+
+       
+     
+    </div>
+    <div class="Products" id="Products">
+        <h1 class="heading">our prouducts</h1>
+        <div class="content_of_products">
+           
+             <div class="box" data-id="1" >
+                <img src="c0d4e35e-dee0-4f3c-a157-5ae9429d1224.jpeg" alt="">
+               <div class="info_cart" >
+                 <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+            
+                <p class="price_product">$19.99 <del>$20.99</del></p>
+               </div>
+               <button onclick="cart_increase()" class="btn_plus">+</button>
+               <span class="btn_delete" id="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+            
+            <div class="box" data-id="2">
+                <img src="01e864aa-0600-4501-b6f8-9376c3aa62e5.jpeg" alt="">
+              <div class="info_cart">
+                  <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+            </div>
+            <button onclick="cart_increase()" class="btn_plus">+</button>
+            <span class="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+            <div class="box" data-id="3">
+                <img src="4fbd78d0-aeca-478c-a284-91edf3fe2f3f.jpeg" alt="">
+               <div class="info_cart">
+                 <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+            </div> 
+             <button onclick="cart_increase()" class="btn_plus">+</button>
+             <span class="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+            <div class="box" data-id="4">
+                <img src="pexels-julieaagaard-2097090.jpg" alt="">
+                <div class="info_cart">
+                    <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+            </div>
+             <button onclick="cart_increase()" class="btn_plus" >+</button>
+             <span class="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+            <div class="box" data-id="5">
+                <img src="pexels-janetrangdoan-1099681.jpg" alt="">
+               <div class="info_cart">
+                 <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+            </div>
+            <button onclick="cart_increase()" class="btn_plus">+</button>
+            <span class="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+            <div class="box" data-id="6">
+                <img src="pexels-rajesh-tp-749235-1633525.jpg" alt="">
+              <div class="info_cart">
+                  <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+            </div>
+            <button onclick="cart_increase()" class="btn_plus">+</button>
+            <span class="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+            <div class="box" data-id="7">
+                <img src="pexels-chevanon-323682.jpg" alt="">
+           <div class="info_cart">
+                 <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+           </div>
+           <button onclick="cart_increase()" class="btn_plus">+</button>
+           <span class="btn_delete" onclick="remove_box(this)">×</span>
+
+            </div>
+            <div class="box" data-id="8">
+                <img src="pexels-valeriya-1833349.jpg" alt="">
+               <div class="info_cart">
+                 <h2>the best tasty</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem amet,
+                     animi illo libero quas distinctio!</p>
+                     <p class="price_product">$19.99 <del>$20.99</del></p>
+               </div>
+               <button onclick="cart_increase()" class="btn_plus">+</button>
+               <span class="btn_delete" onclick="remove_box(this)">×</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="about" id="about">
+        <h1 class="heading">About Us</h1>
+       <div class="details">
+        <div class="image"><img src="504383de-27e9-4417-a7a0-d55d1f68a9ae.jpeg" alt="Error"></div>
+        <div class="content_of_about">
+            <h2>What Makes Our Coffee Special?</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Excepturi nobis quo magni odit nihil fuga id accusantium 
+                perspiciatis dolore doloribus.
+            </p>
+            <button>learn more</button>
+        </div>
+       </div>
+    </div>
+    <div class="Review" id="Review">
+        <h1 class="heading">Customer Review</h1>
+        <div class="details">
+            <div class="box">
+                <div class="image">
+                    <img src="girl_dp1.jpg" alt="">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>salma jhon</p>
+              
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+            
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="gir_dp2.jpg" alt="">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>salma jhon</p>
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+         
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="gir_dp3.jpg" alt="">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>salma jhon</p>
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+                   
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="girl_dp1.jpg" alt="">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>salma jhon</p>
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+              
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="gir_dp2.jpg" alt="">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>salma jhon</p>
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+               
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="gir_dp3.jpg" alt="">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>salma jhon</p>
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+             
+            </div>
+
+        </div>
+    </div>
+    <footer class="Contacts" id="Contacts">
+        <h1 class="heading">Contact Us</h1>
+       <div class="details">
+        <br>
+        <hr>
+        <div class="share">
+            <a href="#" class="fab fa-faceBook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+        <p>Created By <span style="color: black; font-weight: bold;font-family: sans-serif;">Fatma Ayman</span> |All Right Reserved ©2024</p>
+       </div>
+    </footer>
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery-3.7.1.js">
+
+    </script>
+    <script src="js/bootstrap.js"></script>
+    
+        <script>  
+         var btn_monay = document.getElementById('total_monay'); 
+        let increase=document.getElementById('increase'); 
+        let x=0;
+        function cart_increase(){
+            
+            x++;increase.style.display='inline';
+            increase.value=x;
+        }    
+ 
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+      var products = document.querySelectorAll('.box');
+      var shoppingList = document.getElementById('increase_btn');
+      var price =document.getElementById('btn_delete');
+      products.forEach(function(product){
+        var btn=product.querySelector('button');
+        btn.addEventListener('click', function(){
+            var productContent = product.cloneNode(true);
+          var removeElement=productContent.querySelectorAll('.btn_plus');
+          removeElement.forEach(function(el){
+            el.parentNode.removeChild(el);
+          });
+          btn_monay.style.display='inline';
+          productContent.style.display='flex';
+          shoppingList.appendChild(productContent);
+    
+        });
+      });
+    });
+
+        function remove_box(product){
+            x--;
+            if(x ==0){
+                increase.style.display='none';
+                btn_monay.style.display='none';
+            }else{
+                increase.value=x;
+            }
+            var shoppingList = document.getElementById('increase_btn');
+            var listItem =product.parentElement;
+            shoppingList.removeChild(listItem);
+         
+        }
+        
+      
+        let dis= document.getElementById('display');
+           function print(x){
+            dis.value+=x;
+           }
+           function clear_last_digit(){
+            dis.value=dis.value.slice(0,-1);
+           }
+           function display_clear(){
+            dis.value='';
+           }
+           function calculate(){
+            try{
+                dis.value=eval(dis.value);
+            }catch(error){
+                dis.value='Error';
+            }
+           }
+
+        
+            
+        </script>
+   
+    
+</body>
+</html>
