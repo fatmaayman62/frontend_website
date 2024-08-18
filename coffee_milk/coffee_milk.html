@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <div class="container">
+
+      <div class="navbar navbar-expand-lg navbar-light">
+        <a href="#" class="navbar-brand col-3" style="color:rgb(255, 255, 255);font-weight:bold;margin-left:4px; margin-right:10px;">Coffee</a>
+        <a href="#f" class="navbar-toggler " style="margin: 0 3vw;" data-toggle="collapse"><span class="navbar-toggler-icon"></span></a>
+      
+        <div class="collapse navbar-collapse" id="f">
+        <ul class="navbar-nav col-7">
+            <li class="nav-item"><a href="#Home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#Coffee" class="nav-link">Coffee</a></li>
+            <li class="nav-item"><a href="#Bakery" class="nav-link">Bakery</a></li>
+            <li class="nav-item"><a href="#Shop" class="nav-link">Shop</a></li>
+            <li class="nav-item"><a href="#Review" class="nav-link">Review</a></li>
+            <li class="nav-item"><a href="#Contacts" class="nav-link">Contacts</a></li>   
+        </ul>
+        <div class="search">
+            <a id="btn_search"><span class="fas fa-search"></span></a>
+            <input type="text" id="input_search" placeholder="search....">
+        </div>
+      </div>
+
+      </div>
+  
+            <div class="carousel slide"   id="slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#slide" class="active" data-slide-to="0"></li>
+                    <li data-target="#slide" data-slide-to="1"></li>
+                    <li data-target="#slide" data-slide-to="2"></li>
+                    <li data-target="#slide" data-slide-to="3"></li>
+                    <li data-target="#slide" data-slide-to="4"></li>
+
+                </ol>
+                <div class="carousel-inner image_size">
+                    <div class="carousel-item active"><img class=" w-100" src="image/6ca464f0-f05b-49cf-b688-f199489a6e67.jpeg" alt=""></div>
+                    <div class="carousel-item"><img class=" w-100" src="image/bcbacd68-4d45-49f4-8bae-322054a710a3.jpeg" alt=""></div>
+                    <div class="carousel-item"><img class=" w-100" src="image/33e787c5-f242-48cc-9293-6a26a9cbe549.jpeg" alt=""></div>
+                    <div class="carousel-item"><img class=" w-100" src="image/94286149-6fa3-4b31-98a8-db75b5a5c440.jpeg" alt=""></div>
+                    <div class="carousel-item"><img class=" w-100" src="image/3213a7b1-b794-45ae-bf2b-e32bbedc37c9.jpeg" alt=""></div>
+            
+                </div>
+                <a href="#slide" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+                <a href="#slide" class="carousel-control-prev" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+          
+            </div>
+            <div class="Home" id="Home">
+                <div class="content">
+                    <h1>Hello, Coffee!</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                        Veniam repellat excepturi voluptates distinctio, quos aliquam!</p>
+                    <button>learn more ></button>
+                </div>
+                <div class="image"><img src="image/15cddb2e-0d26-45c8-9fea-94e83efb2573.jpeg" alt=""></div>
+
+            </div>
+            <div class="Coffee" id="Coffee">
+                <h1 class="heading">coffee products</h1>
+                <div class="products">
+                   <div class="icon"> <span class="carousel-control-prev-icon prev"></span></div>
+                   
+                    <div class="content" id="products_content">
+                    
+                        <div class="box" data-id="product1" data-price="15.99">
+                        <img src="image/Beverages - The Cinnamon Jar.jpeg" alt="">
+                        <div id="price">
+                            <h3>chocolate desert</h3>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                           <div class="btn">
+                               <span data-price="15.99">$15.99</span>
+                               <button id="btn_delete">select</button>
+                           </div>
+                       </div>
+                       <span class="remove" onclick="remove_box(this)">×</span>
+    
+                        </div>
+                        <div class="box" data-id="product2" data-price="15.99">
+                            <img src="image/0aefc0f3-c260-4453-9b3d-15bc4d0dc691.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+        
+                        </div>
+                        <div class="box" data-id="product3" data-price="15.99">
+
+                            <img src="image/32f4a41e-ae62-406a-8a4d-33a560aebaaf.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+        
+                        </div>
+                        <div class="box" data-id="product4" data-price="15.99">
+
+                            <img src="image/33e787c5-f242-48cc-9293-6a26a9cbe549.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+        
+                        </div>
+                        <div class="box" data-id="product5" data-price="15.99">
+
+                            <img src="image/76be2e6a-50ab-469f-bfae-352153c9f285.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+        
+                        </div>
+                        <div class="box" data-id="product6" data-price="15.99">
+
+                            <img src="image/875b44d3-10e7-4f0e-93e8-e4386203f7ee.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+        
+                        </div>
+                        <div class="box" data-id="product7" data-price="15.99">
+
+                            <img src="image/94286149-6fa3-4b31-98a8-db75b5a5c440.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+        
+                        </div>
+                    </div>
+                    <div class="icon"><span class="carousel-control-next-icon next"></span></div>
+                </div>
+             
+            </div>
+            <div class="Bakery" id="Bakery">
+                <h1 class="heading">our special desert</h1>
+                <div class="products" >
+                    <div class="icon_bakary"> <span class="carousel-control-prev-icon prev_bekary"></span></div>
+                    
+                     <div class="content" id="products_content_bekary">
+                        <div class="box" data-id="product8" data-price="15.99">
+                            <img src="image/7bb149de-0924-4160-900c-b85540920bde.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+
+                        </div>
+                        <div class="box" data-id="product9" data-price="15.99">
+                            <img src="image/0ff26b8d-0ec5-4d85-b3ec-869095f7f763.jpeg" alt="">
+                           <div class="">
+                             <h3>chocolate desert</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                            <div class="btn">
+                                <span data-price="15.99">$15.99</span>
+                                <button id="btn_delete">select</button>
+                            </div>
+                        </div>
+                        <span class="remove" onclick="remove_box(this)">×</span>
+
+                        </div>
+                        <div class="box" data-id="product10" data-price="15.99">
+                            <img src="image/⋆ sɪʀʏʟɪɴ_🪐.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+
+                        </div>
+                        <div class="box" data-id="product11" data-price="15.99">
+                            <img src="image/673dbaad-07ad-492c-87ca-3d9a7eeb9683.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                           <span class="remove" onclick="remove_box(this)">×</span>
+
+                        </div>
+                        <div class="box" data-id="product12" data-price="15.99">
+                            <img src="image/😋.jpeg" alt="">
+                            <div class="">
+                                <h3>chocolate desert</h3>
+                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, aperiam.</p>
+                               <div class="btn">
+                                   <span data-price="15.99">$15.99</span>
+                                   <button id="btn_delete">select</button>
+                               </div>
+                           </div>
+                               <span class="remove" onclick="remove_box(this)">×</span>
+
+                        </div>
+              
+                     </div>
+                     <div class="icon_bakary"><span class="carousel-control-next-icon next_bekary"></span></div>
+                 </div>
+                
+            </div>
+            <div class="Shop" id="Shop">
+                <p>check  out our best coffee betans </p>
+                <button>click here</button>
+            </div>
+            <div class="Review" id="Review">
+                <h1 class="heading">our Review</h1>   
+                    <div class="customer">
+                        <div class="item " onclick="conectItemWithDot(1)">
+                            <div class="info"><img  src="image/man_dp1.jpg" alt="">
+                                <h3>Jhon</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                 Voluptatem tempora et impedit esse quos? Deleniti facere inventore laborum,
+                                  </p>
+                        </div>
+                        <div class="item active" onclick="conectItemWithDot(2)">
+                            <div class="info"><img  src="image/man_dp2.jpg" alt="">
+                                <h3>Mikle</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                 Voluptatem tempora et impedit esse quos? Deleniti facere inventore laborum,
+                                 </p>
+                        </div>
+                        <div class="item" onclick="conectItemWithDot(3)">
+                            <div class="info"><img src="image/man_dp3.jpg" alt="">
+                                <h3>Jack</h3>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                 Voluptatem tempora et impedit esse quos? Deleniti facere inventore laborum,
+                                  </p>
+                        </div>
+   
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="conectItemWithDot(1)" ></span>
+                <span class="dot active" onclick="conectItemWithDot(2)"></span>
+                <span class="dot" onclick="conectItemWithDot(3)"></span>
+            </div>
+
+
+    </div>
+    <footer class="Contacts" id="Contacts">
+      <div class="content">
+        <h2>Coffee</h2>
+        <div class="subscribe">
+            <p>get of 20% discount for you when you subscribe</p>
+            <form action="">
+                <input type="email" placeholder="enter your email....">
+                <input type="submit" value="subscribe">
+            </form>
+            <a href="#list" class="navbar-toggler" data-toggle="collapse" style="text-decoration-line: underline;">your purchases</a>
+       
+        </div>
+        <div class="services">
+            <h3>Services</h3>
+            <p><a href="#">membership</a></p>
+            <p><a href="#">products</a></p>
+            <p><a href="#">store</a></p>
+        </div>
+        <div class="about">
+            <h3>About Us</h3>
+            <p><a href="#">about us</a></p>
+            <p><a href="#">subscription</a></p>
+            <div class="share">
+                <a href="#" class="fab fa-faceBook-f"></a>
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+                <a href="#" class="fab fa-pinterest"></a>
+            </div>
+        </div>
+      </div>
+     <div class="content_of_cart collapse col-xl-5 col-lg-6 col-md-7 col-sm-8"  id="list">
+
+        <button class="form-control col-xl-5 col-lg-6 col-md-7 col-sm-8" onclick="fun_to_display_Totalprice()" id="total_money">Total Money</button>
+
+        <div class="box_of_price  col-xl-5 col-lg-6 col-md-7 col-sm-8" id="box_of_price" >
+                <span id="display_price"></span>
+            <span>$</span> 
+             
+        </div>
+     </div>
+    </footer>
+
+            
+   
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/jquery-3.7.1.js">
+
+    </script>
+    <script src="js/bootstrap.js"></script>
+    
+    
+        <script src="main.js">  
+
+        </script>
+   
+    
+</body>
+</html>
