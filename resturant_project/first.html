@@ -278,6 +278,7 @@
     .Review .details img{
         width: 70px;height: 70px;
         border-radius: 50%;
+        object-fit: cover;
     }
     .Review .details img:hover{
         height: 72px;width: 72px;
@@ -362,7 +363,6 @@
    
     }
 
-   
   
    </style>
 </head>
@@ -573,7 +573,7 @@
         <div class="details">
             <div class="box">
                 <div class="image">
-                    <img src="girl_dp1.jpg" alt="">
+                    <img src="man_dp1.jpg" alt="">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -581,7 +581,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>salma jhon</p>
+                    <p>jack jhon</p>
               
                 </div>
                 <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -590,7 +590,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="gir_dp2.jpg" alt="">
+                    <img src="man_dp2.jpg" alt="">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -598,7 +598,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>salma jhon</p>
+                    <p>jack jhon</p>
                 </div>
                 <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Perferendis eius quasi laudantium nam temporibus .</p>
@@ -606,7 +606,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="gir_dp3.jpg" alt="">
+                    <img src="man_dp3.jpg" alt="">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -614,7 +614,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>salma jhon</p>
+                    <p>jack jhon</p>
                 </div>
                 <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Perferendis eius quasi laudantium nam temporibus .</p>
@@ -622,7 +622,7 @@
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="girl_dp1.jpg" alt="">
+                    <img src="man_dp1.jpg" alt="">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -630,15 +630,16 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>salma jhon</p>
-                </div>
-                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Perferendis eius quasi laudantium nam temporibus .</p>
+                    <p>jack jhon</p>
               
+                </div>
+                <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis eius quasi laudantium nam temporibus .</p>
+            
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="gir_dp2.jpg" alt="">
+                    <img src="man_dp2.jpg" alt="">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -646,15 +647,15 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>salma jhon</p>
+                    <p>jack jhon</p>
                 </div>
                 <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Perferendis eius quasi laudantium nam temporibus .</p>
-               
+         
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="gir_dp3.jpg" alt="">
+                    <img src="man_dp3.jpg" alt="">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -662,11 +663,11 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p>salma jhon</p>
+                    <p>jack jhon</p>
                 </div>
                 <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                     Perferendis eius quasi laudantium nam temporibus .</p>
-             
+                   
             </div>
 
         </div>
@@ -693,37 +694,28 @@
     <script src="js/bootstrap.js"></script>
     
         <script>  
+
+        //global variable to use in multi function
+        
          var btn_monay = document.getElementById('total_monay'); 
         let increase=document.getElementById('increase'); 
         let x=0;
+
+
+
+        //to increasing counter of product inside shopping list
+        //start
         function cart_increase(){
             
             x++;increase.style.display='inline';
             increase.value=x;
-        }    
- 
+        } 
+        //end
 
-
-        document.addEventListener('DOMContentLoaded', function() {
-      var products = document.querySelectorAll('.box');
-      var shoppingList = document.getElementById('increase_btn');
-      var price =document.getElementById('btn_delete');
-      products.forEach(function(product){
-        var btn=product.querySelector('button');
-        btn.addEventListener('click', function(){
-            var productContent = product.cloneNode(true);
-          var removeElement=productContent.querySelectorAll('.btn_plus');
-          removeElement.forEach(function(el){
-            el.parentNode.removeChild(el);
-          });
-          btn_monay.style.display='inline';
-          productContent.style.display='flex';
-          shoppingList.appendChild(productContent);
-    
-        });
-      });
-    });
-
+        ///////////////////////////////////////////////
+        
+        //remove product from shopping list
+        //start
         function remove_box(product){
             x--;
             if(x ==0){
@@ -737,9 +729,42 @@
             shoppingList.removeChild(listItem);
          
         }
+        //end
+
+        //////////////////////////////////////////////////////////////////
         
-      
+        //to add product to shopping list
+        //start
+        document.addEventListener('DOMContentLoaded', function(){
+      var products = document.querySelectorAll('.box');
+      var shoppingList = document.getElementById('increase_btn');
+    
+      products.forEach(function(product){
+        var btn=product.querySelector('button');
+
+        btn.addEventListener('click', function(){
+            var productContent = product.cloneNode(true);
+          var removeElement=productContent.querySelectorAll('.btn_plus');
+
+          removeElement.forEach(function(el){
+            el.parentNode.removeChild(el);
+          });
+
+          btn_monay.style.display='inline';
+          productContent.style.display='flex';
+          shoppingList.appendChild(productContent);
+    
+        });
+      });
+    });
+    //end
+
+       //////////////////////////////////////////////////////////////////
+
+      //to show the result to calculator
+      //start
         let dis= document.getElementById('display');
+
            function print(x){
             dis.value+=x;
            }
@@ -756,6 +781,7 @@
                 dis.value='Error';
             }
            }
+           //end
 
         
             
